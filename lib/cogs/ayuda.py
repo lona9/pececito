@@ -33,7 +33,7 @@ class Ayuda(Cog):
 
     embed = Embed(title="Lista de comandos", colour=0x03A4DB)
 
-    fields = [("\u200B", "!ayuda\n!comandos\n!rrss\n!playlist\n!nivel\n!puesto", False)]
+    fields = [("\u200B", "!ayuda\n!comandos\n!rrss\n!playlist\n!nivel\n!puesto\n!live", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)

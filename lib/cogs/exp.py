@@ -90,7 +90,7 @@ class Exp(Cog):
       try:
           self.ctx = ctx
 
-          embed = Embed(colour=0xFF0000)
+          embed = Embed(colour=0x03A4DB)
 
           fields = [(f"Puesto de {target.display_name}", f"**{target.display_name}** está en el puesto **{ids.index(target.id)+1}** de {len(ids)} usuaries.", False)]
 
