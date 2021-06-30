@@ -44,10 +44,13 @@ class Exp(Cog):
     self.bot = bot
 
   async def process_xp(self, message):
-    xp, lvl, xplock = db.record("SELECT XP, Level, XPLock FROM exp WHERE UserID = ?", message.author.id)
+    if message.channel == self.bot.get_channel(804445064029798431):
+        pass
+    else:
+        xp, lvl, xplock = db.record("SELECT XP, Level, XPLock FROM exp WHERE UserID = ?", message.author.id)
 
-    if datetime.utcnow() > datetime.fromisoformat(xplock):
-        await self.add_xp(message, xp, lvl)
+        if datetime.utcnow() > datetime.fromisoformat(xplock):
+            await self.add_xp(message, xp, lvl)
 
   async def add_xp(self, message, xp, lvl):
     xp_to_add = randint(10, 20)
@@ -113,6 +116,14 @@ class Exp(Cog):
                         timeout=60.0)
 
       await menu.start(ctx)
+
+  @Cog.listener()
+  async def on_member_join(self, member):
+    db.execute("INSERT INTO exp (UserID) VALUES (?)", member.id)
+
+  @Cog.listener()
+  async def on_member_remove(self, member):
+    db.execute("DELETE FROM exp WHERE UserID = ?", member.id)
 
   @Cog.listener()
   async def on_ready(self):
