@@ -31,8 +31,9 @@ class Live(Cog):
     await ctx.channel.send(embed=embed)
 
     guild = ctx.message.guild
+
     for role in guild.roles:
-      if role.name == "notifs":
+      if role.name == "notificaciones":
         role_id = role
         break
 
