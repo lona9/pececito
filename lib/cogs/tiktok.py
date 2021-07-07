@@ -19,7 +19,7 @@ class Tiktok(Cog):
         embed.add_field(name=name, value=value, inline=inline)
 
     embed.set_author(name='pececito', icon_url=self.ctx.guild.icon_url)
-    embed.set_image(url="https://cdn.discordapp.com/attachments/855531786746069002/856657283626172446/IMG-0143_1.PNG")
+    embed.set_image(url="https://cdn.discordapp.com/attachments/859880030015062047/862374250526539806/image0.png")
 
     await ctx.channel.send(embed=embed)
 
