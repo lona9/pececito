@@ -117,17 +117,25 @@ class Exp(Cog):
 
       await menu.start(ctx)
 
+  @command()
+  async def clear_db(self, ctx):
+      zero = 0
+      db.execute("UPDATE exp SET XP = ?, Level = ?", zero, zero)
+
+
   @Cog.listener()
   async def on_member_join(self, member):
-    db.execute("INSERT INTO exp (UserID) VALUES (?)", member.id)
+    if member.guild.id == 855476704978010132:
+        db.execute("INSERT INTO exp (UserID) VALUES (?)", member.id)
 
   @Cog.listener()
   async def on_member_remove(self, member):
-    db.execute("DELETE FROM exp WHERE UserID = ?", member.id)
+    if member.guild.id == 855476704978010132:
+        db.execute("DELETE FROM exp WHERE UserID = ?", member.id)
 
   @Cog.listener()
   async def on_ready(self):
-    self.levelup_channel = self.bot.get_channel(855547712200114196)
+    self.levelup_channel = self.bot.get_channel(866114079843024896)
     if not self.bot.ready:
       self.bot.cogs_ready.ready_up("exp")
 

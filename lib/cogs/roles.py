@@ -55,11 +55,13 @@ class Roles(Cog):
     venezuela = get(user.guild.roles, name="venezuela")
     spain = get(user.guild.roles, name="españa")
     francia = get(user.guild.roles, name="francia")
+    korea = get(user.guild.roles, name="corea")
     supp = get(user.guild.roles, name="supp main")
     adc = get(user.guild.roles, name="adc main")
     top = get(user.guild.roles, name="top main")
     jg = get(user.guild.roles, name="jg main")
     mid = get(user.guild.roles, name="mid main")
+    vip = get(user.guild.roles, name="vip")
 
     if payload.channel_id == 857388217946210314:
       if payload.emoji.name =='🛎️':
@@ -90,6 +92,8 @@ class Roles(Cog):
         await user.add_roles(spain)
       elif payload.emoji.name == '🇫🇷':
         await user.add_roles(francia)
+      elif payload.emoji.name == '🇰🇷':
+        await user.add_roles(korea)
       elif payload.emoji.name == '🏥':
         await user.add_roles(supp)
       elif payload.emoji.name == '🗡️':
@@ -100,6 +104,9 @@ class Roles(Cog):
         await user.add_roles(jg)
       elif payload.emoji.name == '🧙':
         await user.add_roles(mid)
+    elif payload.channel_id == 862069303141466144:
+      if payload.emoji.name == '☑️':
+          await user.add_roles(vip)
 
 def setup(bot):
   bot.add_cog(Roles(bot))

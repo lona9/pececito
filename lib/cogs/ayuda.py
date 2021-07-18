@@ -18,7 +18,7 @@ class Ayuda(Cog):
 
     fields = [("¡Hola!", "Soy el bot de **La Pecera** y estoy aquí para ayudarte.", False),
                 ("Escribe los siguientes comandos para pedir más información:", "**!ayuda**: estás aquí!\n**!comandos**: lista de comandos disponbiles\n**!canales**: lista de los canales y sus descripciones", False),
-                ("Algunos datos útiles:", ":fish: Puedes encontrar las reglas del canal <#862069303141466144>\n:fish: Puedes agregarte distintos roles en el canal <#857388217946210314>\n:fish: Este bot tiene incorporado un sistema de experiencia que te dará **maricooins** cada vez que envíes un mensaje (cooldown de 20 segundos).", False)]
+                ("Algunos datos útiles:", ":fish: Puedes encontrar las reglas en el canal <#862069303141466144>\n:fish: Puedes agregarte distintos roles en el canal <#857388217946210314>\n:fish: Este bot tiene incorporado un sistema de experiencia que te dará **maricooins** cada vez que envíes un mensaje (cooldown de 20 segundos).", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)

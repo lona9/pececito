@@ -54,7 +54,6 @@ class Log(Cog):
 
   @Cog.listener()
   async def on_member_remove(self, member):
-
       if member.guild.id == 855476704978010132:
           tz_CL = pendulum.timezone('America/Santiago')
           time_now = datetime.now(tz_CL)
